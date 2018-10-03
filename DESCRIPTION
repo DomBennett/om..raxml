@@ -1,4 +1,4 @@
-Package: om..raxml..8.2.12..dombennett
+Package: om..raxml..8.2.12.pthreads.sse3..dombennett
 Type: Package
 Title: RAxML 8.2.12 HPC PTHREADS SSE3
 Version: 0.1.0
