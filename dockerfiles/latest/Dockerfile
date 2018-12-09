@@ -1,8 +1,9 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \
     wget make gcc
 
+# convert to latest
 RUN wget https://github.com/stamatak/standard-RAxML/archive/v8.2.12.tar.gz && \
     tar zxvf v8.2.12.tar.gz && \
     rm v8.2.12.tar.gz && \

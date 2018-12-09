@@ -1,14 +1,16 @@
-Package: om..raxml..8.2.12.pthreads.sse3..dombennett
+Package: om..raxml..dombennett
 Type: Package
-Title: RAxML 8.2.12 HPC PTHREADS SSE3
+Title: RAxML HPC PTHREADS SSE3
 Version: 0.1.0
+GitHub: dombennett
+Docker: dombennett
 Author: Dom Bennett
 Maintainer: Dom Bennett <dominic.john.bennett@gmail.com>
-Description: Install and run RAxML version 8.2.12 HPC PTHREADS SSE3 in R.
+Description: Install and run RAxML HPC PTHREADS SSE3 in R.
 License: MIT + file LICENSE
 Encoding: UTF-8
-BugReports: https://github.com/dombennett/om..raxml..8.2.12/issues
-RoxygenNote: 6.1.0
+BugReports: https://github.com/dombennett/om..raxml/issues
+RoxygenNote: 6.1.1
 Depends:
     R (>= 3.3.0)
 Imports:
