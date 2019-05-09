@@ -1,3 +1,5 @@
 library(outsider)
+module_install(repo = 'dombennett/om..raxml', force = TRUE)
 raxml <- module_import('raxml', repo = 'dombennett/om..raxml')
 raxml('-h')
+module_uninstall(repo = 'dombennett/om..raxml')

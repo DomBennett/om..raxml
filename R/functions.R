@@ -7,13 +7,11 @@ pkgnm <- environmentName(env = environment())
 #' @example examples/raxml.R
 #' @export
 raxml <- function(...) {
-  arglist <- outsider::.arglist_get(...)
-  files_to_send <- outsider::.filestosend_get(arglist)
-  arglist <- outsider::.arglist_parse(arglist)
-  otsdr <- outsider::.outsider_init(repo = 'dombennett/om..raxml',
-                                    cmd = 'raxmlHPC-PTHREADS-SSE3',
-                                    wd = getwd(),
-                                    files_to_send = files_to_send,
-                                    arglist = arglist)
-  outsider::.run(otsdr)
+  arglist <- arglist_get(...)
+  files_to_send <- filestosend_get(arglist)
+  arglist <- arglist_parse(arglist)
+  otsdr <- outsider_init(pkgnm = 'om..raxml', cmd = 'raxmlHPC-PTHREADS-SSE3',
+                         wd = getwd(), files_to_send = files_to_send,
+                         arglist = arglist)
+  run(otsdr)
 }
