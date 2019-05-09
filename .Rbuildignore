@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 ^dev\.R$
 ^examples$
+^\.travis\.yml$
