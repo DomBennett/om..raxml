@@ -4,10 +4,10 @@
 \alias{raxml}
 \title{raxml}
 \usage{
-raxml(...)
+raxml(arglist = arglist_get(...))
 }
 \arguments{
-\item{...}{Arguments}
+\item{arglist}{Arguments to raxml provided as a character vector}
 }
 \description{
 Run raxml
