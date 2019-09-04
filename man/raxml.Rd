@@ -4,10 +4,12 @@
 \alias{raxml}
 \title{raxml}
 \usage{
-raxml(arglist = arglist_get(...))
+raxml(arglist = arglist_get(...), outdir = getwd())
 }
 \arguments{
 \item{arglist}{Arguments to raxml provided as a character vector}
+
+\item{outdir}{Filepath to where all output files should be returned.}
 }
 \description{
 Run raxml
