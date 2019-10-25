@@ -1,6 +1,5 @@
 program: RAxML
-flavour: 8.2.12
-details: RAxML HPC PTHREADS SSE3
+details: "Randomized Axelerated Maximum Likelihood" (8.2.12 HPC PTHREADS SSE3) for inferring phylogenies
 docker: dombennett
 github: dombennett
 url: https://github.com/DomBennett/om..raxml
