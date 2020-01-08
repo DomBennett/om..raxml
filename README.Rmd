@@ -94,7 +94,7 @@ dir.create(results_dir)
 # program.
 # Note: R objects are allowed in the arglist, e.g. input_file
 raxml(arglist = c('-m', 'GTRGAMMA', '-p', '12345', '-q', partition_file,
-                  '-s', input_file, '-n', 'T23'), outdir = results_dir)
+                  '-s', input_file, '-n', 'T21'), outdir = results_dir)
 ```
 
 ```{r uninstall-snippet, eval=TRUE, include=FALSE}
@@ -125,25 +125,42 @@ working directory.
 
 #### Other examples: from command-line to R
 
-```
-# ML
+
+##### ML
+
+```{bash, ml-shell, eval=FALSE}
 # command line
 raxmlHPC -m BINGAMMA -p 12345 -s binary.phy -# 20 -n T5
+```
+
+```{r, ml-r, eval=FALSE}
 # R
 raxml(arglist = c('-m', 'BINGAMMA', '-p', '12345', '-s', 'binary.phy', '-#',
 '20', '-n', 'T5'))
+```
 
-# Ordered morphological character matrix
+##### Ordered morphological character matrix
+
+```{bash, om-shell, eval=FALSE}
 # command line
 raxmlHPC -p 12345 -m MULTIGAMMA -s  multiState.phy -K ORDERED -n T12
+```
+
+```{r, om-r, eval=FALSE}
 # R
 raxml(arglist = c('-p', '12345', '-m', 'MULTIGAMMA', '-s', 'multiState.phy',
 '-K', 'ORDERED', '-n', 'T12'))
+```
 
-# Bootstrap
+##### Bootstrap
+
+```{bash, bs-shell, eval=FALSE}
 # command line
-raxmlHPC -m GTRCAT -p 12345 -f b -t RAxML_bestTree.T13 -z RAxML_bootstrap.T14
--n T15.
+raxmlHPC -m GTRCAT -p 12345 -f b -t RAxML_bestTree.T13 -z RAxML_bootstrap.T14 \
+-n T15
+```
+
+```{r, bs-r, eval=FALSE}
 # R
 raxml(arglist = c('-m', 'GTRCAT', '-p', '12345', '-f', 'b', '-t',
 'RAxML_bestTree.T13', '-z', 'RAxML_bootstrap.T14', '-n', 'T15'))

@@ -59,7 +59,7 @@ module_install(repo = "dombennett/om..raxml")
 #> image: dombennett/om_raxml
 #> container: om_raxml
 #> package: om..raxml
-#> Travis CI: Passing
+#> Travis CI: Failing/Erroring
 #> -----------------------------------------------------
 #> Enter any key to continue or press Esc to quit
 #module_help(repo = "dombennett/om..raxml")
@@ -117,7 +117,7 @@ dir.create(results_dir)
 # program.
 # Note: R objects are allowed in the arglist, e.g. input_file
 raxml(arglist = c('-m', 'GTRGAMMA', '-p', '12345', '-q', partition_file,
-                  '-s', input_file, '-n', 'T23'), outdir = results_dir)
+                  '-s', input_file, '-n', 'T21'), outdir = results_dir)
 #> 
 #> WARNING: The number of threads is currently set to 0
 #> You can specify the number of threads to run via -T numberOfThreads
@@ -181,7 +181,7 @@ raxml(arglist = c('-m', 'GTRGAMMA', '-p', '12345', '-q', partition_file,
 #> 
 #> RAxML was called as follows:
 #> 
-#> raxmlHPC-PTHREADS-SSE3 -m GTRGAMMA -p 12345 -q simpleDNApartition.txt -s dna.phy -n T23 
+#> raxmlHPC-PTHREADS-SSE3 -m GTRGAMMA -p 12345 -q simpleDNApartition.txt -s dna.phy -n T21 
 #> 
 #> 
 #> Partition: 0 with name: p1
@@ -190,22 +190,22 @@ raxml(arglist = c('-m', 'GTRGAMMA', '-p', '12345', '-q', partition_file,
 #> Partition: 1 with name: p2
 #> Base frequencies: 0.327 0.283 0.183 0.207 
 #> 
-#> Inference[0]: Time 0.091409 GAMMA-based likelihood -377.005373, best rearrangement setting 5
+#> Inference[0]: Time 0.098335 GAMMA-based likelihood -377.005373, best rearrangement setting 5
 #> 
 #> 
 #> Conducting final model optimizations on all 1 trees under GAMMA-based models ....
 #> 
-#> Inference[0] final GAMMA-based Likelihood: -375.308100 tree written to file /working_dir/RAxML_result.T23
+#> Inference[0] final GAMMA-based Likelihood: -375.308100 tree written to file /working_dir/RAxML_result.T21
 #> 
 #> 
 #> Starting final GAMMA-based thorough Optimization on tree 0 likelihood -375.308100 .... 
 #> 
 #> Final GAMMA-based Score of best tree -375.308100
 #> 
-#> Program execution info written to /working_dir/RAxML_info.T23
-#> Best-scoring ML tree written to: /working_dir/RAxML_bestTree.T23
+#> Program execution info written to /working_dir/RAxML_info.T21
+#> Best-scoring ML tree written to: /working_dir/RAxML_bestTree.T21
 #> 
-#> Overall execution time: 0.141985 secs or 0.000039 hours or 0.000002 days
+#> Overall execution time: 0.147280 secs or 0.000041 hours or 0.000002 days
 ```
 
 ### Key arguments
@@ -227,27 +227,45 @@ current working directory.
 
 #### Other examples: from command-line to R
 
-    # ML
-    # command line
-    raxmlHPC -m BINGAMMA -p 12345 -s binary.phy -# 20 -n T5
-    # R
-    raxml(arglist = c('-m', 'BINGAMMA', '-p', '12345', '-s', 'binary.phy', '-#',
-    '20', '-n', 'T5'))
-    
-    # Ordered morphological character matrix
-    # command line
-    raxmlHPC -p 12345 -m MULTIGAMMA -s  multiState.phy -K ORDERED -n T12
-    # R
-    raxml(arglist = c('-p', '12345', '-m', 'MULTIGAMMA', '-s', 'multiState.phy',
-    '-K', 'ORDERED', '-n', 'T12'))
-    
-    # Bootstrap
-    # command line
-    raxmlHPC -m GTRCAT -p 12345 -f b -t RAxML_bestTree.T13 -z RAxML_bootstrap.T14
-    -n T15.
-    # R
-    raxml(arglist = c('-m', 'GTRCAT', '-p', '12345', '-f', 'b', '-t',
-    'RAxML_bestTree.T13', '-z', 'RAxML_bootstrap.T14', '-n', 'T15'))
+##### ML
+
+``` bash
+# command line
+raxmlHPC -m BINGAMMA -p 12345 -s binary.phy -# 20 -n T5
+```
+
+``` r
+# R
+raxml(arglist = c('-m', 'BINGAMMA', '-p', '12345', '-s', 'binary.phy', '-#',
+'20', '-n', 'T5'))
+```
+
+##### Ordered morphological character matrix
+
+``` bash
+# command line
+raxmlHPC -p 12345 -m MULTIGAMMA -s  multiState.phy -K ORDERED -n T12
+```
+
+``` r
+# R
+raxml(arglist = c('-p', '12345', '-m', 'MULTIGAMMA', '-s', 'multiState.phy',
+'-K', 'ORDERED', '-n', 'T12'))
+```
+
+##### Bootstrap
+
+``` bash
+# command line
+raxmlHPC -m GTRCAT -p 12345 -f b -t RAxML_bestTree.T13 -z RAxML_bootstrap.T14 \
+-n T15
+```
+
+``` r
+# R
+raxml(arglist = c('-m', 'GTRCAT', '-p', '12345', '-f', 'b', '-t',
+'RAxML_bestTree.T13', '-z', 'RAxML_bootstrap.T14', '-n', 'T15'))
+```
 
 ## Links
 
